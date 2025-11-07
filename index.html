@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber CTF Challenge Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <header>
+            <h1>🚩 Cyber CTF Platform</h1>
+            <p class="subtitle">Test your cybersecurity skills</p>
+            <div class="score-board">
+                <span>Score: <span id="score">0</span>/5</span>
+            </div>
+        </header>
+
+        <div class="challenges-grid">
+            <!-- Challenge 1 -->
+            <div class="challenge-card" data-challenge="challenge1">
+                <div class="challenge-header">
+                    <h2>🔓 Challenge 1: Welcome</h2>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="challenge-body">
+                    <p>Welcome to the CTF! Your first flag is a gift.</p>
+                    <p><strong>Hint:</strong> Sometimes the answer is right in front of you.</p>
+                    <p class="flag-format">Flag: <code>flag{welcome_to_ctf}</code></p>
+                </div>
+                <div class="challenge-footer">
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button class="submit-btn">Submit</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+
+            <!-- Challenge 2 -->
+            <div class="challenge-card" data-challenge="challenge2">
+                <div class="challenge-header">
+                    <h2>🔍 Challenge 2: Source Code</h2>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="challenge-body">
+                    <p>Developers sometimes leave secrets in comments...</p>
+                    <p><strong>Hint:</strong> View the page source (Ctrl+U)</p>
+                    <!-- Congrats! Here's your flag: flag{inspect_the_source} -->
+                </div>
+                <div class="challenge-footer">
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button class="submit-btn">Submit</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+
+            <!-- Challenge 3 -->
+            <div class="challenge-card" data-challenge="challenge3">
+                <div class="challenge-header">
+                    <h2>🍪 Challenge 3: Cookie Jar</h2>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="challenge-body">
+                    <p>Sometimes secrets are stored locally...</p>
+                    <p><strong>Hint:</strong> Check your browser's cookies or local storage.</p>
+                    <button id="getCookie" class="hint-btn">Get Cookie</button>
+                </div>
+                <div class="challenge-footer">
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button class="submit-btn">Submit</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+
+            <!-- Challenge 4 -->
+            <div class="challenge-card" data-challenge="challenge4">
+                <div class="challenge-header">
+                    <h2>🔐 Challenge 4: Encoding</h2>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="challenge-body">
+                    <p>Decode this message: <code>ZmxhZ3tiYXNlNjRfaXNfZWFzeX0=</code></p>
+                    <p><strong>Hint:</strong> This looks like Base64 encoding.</p>
+                </div>
+                <div class="challenge-footer">
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button class="submit-btn">Submit</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+
+            <!-- Challenge 5 -->
+            <div class="challenge-card" data-challenge="challenge5">
+                <div class="challenge-header">
+                    <h2>🌐 Challenge 5: Hidden API</h2>
+                    <span class="difficulty hard">Hard</span>
+                </div>
+                <div class="challenge-body">
+                    <p>There's a secret endpoint on this site...</p>
+                    <p><strong>Hint:</strong> Check the Network tab when you click around.</p>
+                    <button id="secretBtn" class="hint-btn">Click Me!</button>
+                </div>
+                <div class="challenge-footer">
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button class="submit-btn">Submit</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="completion-message" id="completionMessage">
+            <h2>🎉 Congratulations!</h2>
+            <p>You've completed all challenges!</p>
+        </div>
+    </div>
+
+    <script src="challenges.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
