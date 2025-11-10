@@ -29,6 +29,7 @@ body {
     background-size: 200px 200px;
     animation: twinkle 5s ease-in-out infinite;
     opacity: 0.5;
+    z-index: 0;
 }
 
 @keyframes twinkle {
