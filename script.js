@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSolvedChallenges();
     setupEventListeners();
     setupChallenge3();
+    setupResetButton();
+    createModal();
 });
 
 function setupEventListeners() {
@@ -83,6 +85,63 @@ function setupEventListeners() {
     }
 }
 
+function setupResetButton() {
+    const resetBtn = document.getElementById('resetBtn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            showResetModal();
+        });
+    }
+}
+
+function createModal() {
+    // Create modal HTML
+    const modalHTML = `
+        <div id="resetModal" class="modal-overlay">
+            <div class="modal-content">
+                <h3>⚠️ Reset Progress?</h3>
+                <p>Are you sure you want to reset all your progress? This will clear all solved challenges and your score.</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn confirm" id="confirmReset">Yes, Reset</button>
+                    <button class="modal-btn cancel" id="cancelReset">Cancel</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Setup modal event listeners
+    document.getElementById('confirmReset').addEventListener('click', confirmReset);
+    document.getElementById('cancelReset').addEventListener('click', hideResetModal);
+    document.getElementById('resetModal').addEventListener('click', (e) => {
+        if (e.target.id === 'resetModal') {
+            hideResetModal();
+        }
+    });
+}
+
+function showResetModal() {
+    document.getElementById('resetModal').classList.add('show');
+}
+
+function hideResetModal() {
+    document.getElementById('resetModal').classList.remove('show');
+}
+
+function confirmReset() {
+    // Clear all localStorage
+    localStorage.clear();
+    
+    // Hide modal
+    hideResetModal();
+    
+    // Reload page to reset UI
+    setTimeout(() => {
+        location.reload();
+    }, 300);
+}
+
 function showResult(element, message, isSuccess) {
     element.textContent = message;
     element.className = 'result ' + (isSuccess ? 'success' : 'error');
@@ -124,11 +183,9 @@ function setupChallenge3() {
 
 // Easter egg: Reset progress (for testing)
 console.log('%cCTF Platform', 'color: #667eea; font-size: 24px; font-weight: bold;');
-console.log('%cType resetProgress() to clear all progress', 'color: #888; font-size: 12px;');
+console.log('%cType resetProgress() in console for quick reset', 'color: #888; font-size: 12px;');
 
 function resetProgress() {
-    if (confirm('Are you sure you want to reset all progress?')) {
-        localStorage.clear();
-        location.reload();
-    }
+    localStorage.clear();
+    location.reload();
 }
