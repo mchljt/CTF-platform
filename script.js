@@ -1,4 +1,3 @@
-// SHA-256 hash function
 async function sha256(message) {
     const msgBuffer = new TextEncoder().encode(message);
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -7,11 +6,9 @@ async function sha256(message) {
     return hashHex;
 }
 
-// Load solved challenges from localStorage
 let solvedChallenges = JSON.parse(localStorage.getItem('solvedChallenges')) || [];
 let totalScore = parseInt(localStorage.getItem('totalScore')) || 0;
 
-// Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     updateScore();
     loadSolvedChallenges();
@@ -21,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupEventListeners() {
-    // Submit buttons
     document.querySelectorAll('.submit-btn').forEach(btn => {
         btn.addEventListener('click', async (e) => {
             const card = e.target.closest('.challenge-card');
@@ -143,9 +139,6 @@ function loadSolvedChallenges() {
         document.getElementById('completionMessage').classList.add('show');
     }
 }
-
-console.log('%cCTF Platform', 'color: #667eea; font-size: 24px; font-weight: bold;');
-console.log('%cType resetProgress() in console for quick reset', 'color: #888; font-size: 12px;');
 
 function resetProgress() {
     localStorage.clear();
