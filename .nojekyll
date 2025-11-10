@@ -1,4 +1,3 @@
-# In your repository folder
 touch .nojekyll
 git add .nojekyll
 git commit -m "Disable Jekyll processing"
