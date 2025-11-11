@@ -15,7 +15,7 @@
       <p class="subtitle">Test your forensics skills</p>
       <div class="header-controls">
         <div class="score-board">
-          Score: <span id="score">0</span>/46
+          Score: <span id="score">0</span>/51
         </div>
         <button id="resetBtn" class="reset-btn">🔄 Reset Progress</button>
       </div>
@@ -568,6 +568,91 @@
               <div class="result"></div>
             </div>
           </div>
+
+                    <div class="challenge-card" data-challenge="thor6">
+            <div class="challenge-header">
+              <h3>Hash Value Investigation</h3>
+              <span class="difficulty medium">Medium</span>
+            </div>
+            <div class="challenge-body">
+              <p>Find the SHA256 hash of the malicious file detected by THOR Lite.</p>
+              <p>Submit only the first 16 characters of the hash.</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+
+          <div class="challenge-card" data-challenge="thor7">
+            <div class="challenge-header">
+              <h3>File Path Discovery</h3>
+              <span class="difficulty medium">Medium</span>
+            </div>
+            <div class="challenge-body">
+              <p>What is the full directory path where the malicious file was found?</p>
+              <p>Format: use forward slashes and lowercase.</p>
+              <p><strong>Example:</strong> c:/users/admin/desktop</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+
+          <div class="challenge-card" data-challenge="thor8">
+            <div class="challenge-header">
+              <h3>Threat Classification</h3>
+              <span class="difficulty hard">Hard</span>
+            </div>
+            <div class="challenge-body">
+              <p>Based on THOR's output, what type of malware family does this belong to?</p>
+              <p>Check the rule description or malware family classification in the THOR log.</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+
+          <div class="challenge-card" data-challenge="thor9">
+            <div class="challenge-header">
+              <h3>File Size Analysis</h3>
+              <span class="difficulty easy">Easy</span>
+            </div>
+            <div class="challenge-body">
+              <p>What is the size (in bytes) of the malicious file detected?</p>
+              <p>Check the THOR output for file size information.</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+
+          <div class="challenge-card" data-challenge="thor10">
+            <div class="challenge-header">
+              <h3>Scan Duration</h3>
+              <span class="difficulty easy">Easy</span>
+            </div>
+            <div class="challenge-body">
+              <p>How many seconds did the THOR Lite scan take to complete?</p>
+              <p>Check the scan completion message in the THOR output log.</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
 
         </div>
       </section>
