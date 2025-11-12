@@ -32,10 +32,10 @@ function launchConfetti() {
     }());
 }
 
-
 let solvedChallenges = JSON.parse(localStorage.getItem('solvedChallenges')) || [];
 let totalScore = parseInt(localStorage.getItem('totalScore')) || 0;
 
+// SINGLE DOMContentLoaded listener
 document.addEventListener('DOMContentLoaded', () => {
     updateScore();
     loadSolvedChallenges();
@@ -43,6 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     setupResetButton();
     createModal();
+    
+    // Add click handler for completion message
+    const completionMsg = document.getElementById('completionMessage');
+    if (completionMsg) {
+        completionMsg.addEventListener('click', (e) => {
+            if (e.target.id === 'completionMessage') {
+                completionMsg.classList.remove('show');
+            }
+        });
+    }
 });
 
 function setupEventListeners() {
@@ -50,7 +60,6 @@ function setupEventListeners() {
         btn.addEventListener('click', async (e) => {
             const card = e.target.closest('.challenge-card');
             
-            // Prevent submission if card is locked
             if (card.classList.contains('locked')) {
                 return;
             }
@@ -81,8 +90,9 @@ function setupEventListeners() {
                 input.disabled = true;
 
                 checkAndUnlockChallenges();
-                // CHECK FOR 25 COMPLETED CHALLENGES
-                if (solvedChallenges.length === 25) {
+                
+                // CHECK FOR 24 COMPLETED CHALLENGES
+                if (solvedChallenges.length === 24) {
                     setTimeout(() => {
                         launchConfetti();
                         document.getElementById('completionMessage').classList.add('show');
@@ -129,27 +139,6 @@ function createModal() {
     });
 }
 
-// Close completion modal when clicking outside
-document.addEventListener('DOMContentLoaded', () => {
-    updateScore();
-    loadSolvedChallenges();
-    checkAndUnlockChallenges();
-    setupEventListeners();
-    setupResetButton();
-    createModal();
-    
-    // Add click handler for completion message
-    const completionMsg = document.getElementById('completionMessage');
-    if (completionMsg) {
-        completionMsg.addEventListener('click', (e) => {
-            if (e.target.id === 'completionMessage') {
-                completionMsg.classList.remove('show');
-            }
-        });
-    }
-});
-
-
 function showResetModal() {
     document.getElementById('resetModal').classList.add('show');
 }
@@ -194,15 +183,14 @@ function loadSolvedChallenges() {
         }
     });
     
-    // CHECK FOR 25 COMPLETED CHALLENGES
-    if (solvedChallenges.length === 25) {
+    // CHECK FOR 24 COMPLETED CHALLENGES
+    if (solvedChallenges.length === 24) {
         document.getElementById('completionMessage').classList.add('show');
         launchConfetti();
     }
 }
 
 function checkAndUnlockChallenges() {
-    // Check all challenges that have requirements
     document.querySelectorAll('.challenge-card[data-requires]').forEach(card => {
         const requires = card.dataset.requires;
         if (requires) {
@@ -210,10 +198,8 @@ function checkAndUnlockChallenges() {
             const allCompleted = requiredChallenges.every(id => solvedChallenges.includes(id));
             
             if (allCompleted) {
-                // Unlock if all requirements are met
                 card.classList.remove('locked');
             } else {
-                // Keep locked if requirements not met
                 if (!card.classList.contains('locked')) {
                     card.classList.add('locked');
                 }
