@@ -609,7 +609,7 @@
               
             </div>
             <div class="challenge-body">
-              <p>The vdm file contains <strong>compressed</strong> anti-spyware signatures.</p>
+              <p>mpasbase.vdm contains <strong>compressed</strong> anti-spyware signatures.</p>
               <p>The mpcache file was created to store the <strong>decompressed</strong> anti-spyware signatures to optimise Defender operations.</p>
               <p>Enter <code>igotit</code> to clear this challenge.</p>
             </div>
@@ -625,8 +625,10 @@
               <h3>Proving our hypothesis😎</h3>
             </div>
             <div class="challenge-body">
-              <p>The vdm file's contents are unreadable, but don't worry!</p>
-              <p>Use WDExtract to convert some of its contents into readable strings.</p>
+              <p>mpasbase.vdm's contents are unreadable, but don't worry!</p>
+              <p><strong>1. </strong>Use FTK Imager to extract the mpasbase.vdm file from the snapshot.</p>
+              <p><strong>2. </strong>Use WDExtract to convert some of its contents into readable strings:</p>
+              <p>wdextract64.exe <strong>directory-to-extracted-mpasbase.vdm</strong></p>
               <p>If we can prove that the YARA rule is found in the vdm file, our hypothesis will be proven!</p>
               <p>Search for the previously identified YARA rule, and enter the line number in which the YARA rule is found in.</p>
             </div>
