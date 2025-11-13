@@ -16,7 +16,7 @@
       <p class="subtitle">Test your forensics skills</p>
       <div class="header-controls">
         <div class="score-board">
-          Score: <span id="score">0</span>/25
+          Score: <span id="score">0</span>/26
         </div>
         <button id="resetBtn" class="reset-btn">🔄 Reset Progress</button>
       </div>
@@ -419,8 +419,8 @@
               <h3>Naughty User</h3>
             </div>
             <div class="challenge-body">
-              <p>Use Timeline Explorer to view EvtxEcmd.csv and cross-reference with the Hayabusa timeline. Apply filters to identify the User ID of the user who cleared the logs.</p>
-              
+              <p>Use Timeline Explorer to view <strong>EvtxEcmd.csv</strong> (KAPE module output) and cross-reference with the Hayabusa timeline.</p>
+              <p>Apply filters and groupings to identify the user ID of the user who cleared the logs.</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -794,6 +794,7 @@
             <div class="challenge-body">
               <p>Examine the SYSTEM registry hive and identify the Start value of the Volume Shadow Copy Service registry key.</p>
               <p>What setting has VSS been set to?</p>
+              <p><strong>Note: </strong>Look in <code>\SYSTEM\CurrentControlSet\Services\VSS</code></p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
