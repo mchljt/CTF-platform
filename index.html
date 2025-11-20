@@ -216,7 +216,7 @@
         </div>
       </section>
       
-      <!-- HAYABUSA SECTION -->
+      <!-- HAYABUSA + TIMELINE EXPLORER SECTION -->
       <section id="hayabusa" class="challenge-section">
         <h2>Hayabusa + Timeline Explorer</h2>
         <div class="challenges-grid">
@@ -261,6 +261,34 @@
               <p>In the Hayabusa timeline, identify the Event IDs associated with log clearing activities.</p>
               <p>Answer in ascending order with an underscore separating the Event IDs.</p>
               <p><strong>Example:</strong>123_200</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+
+          <div class="challenge-card" data-challenge="hayabusa4">
+            <div class="challenge-header">
+              <h3>Naughty User</h3>
+            </div>
+            <div class="challenge-body">
+              <p>Use Timeline Explorer to view <code>EvtxEcmd.csv</code> (KAPE module output) and cross-reference with the Hayabusa timeline.</p>
+              <p>Apply filters and groupings to identify the user ID of the user who cleared the logs.</p>
+            </div>
+            <div class="challenge-footer">
+              <input type="text" placeholder="Enter flag..." class="flag-input" />
+              <button class="submit-btn">Submit</button>
+              <div class="result"></div>
+            </div>
+          </div>
+          <div class="challenge-card" data-challenge="hayabusa5">
+            <div class="challenge-header">
+              <h3>Naughty Process</h3>
+            </div>
+            <div class="challenge-body">
+              <p>A process cleared the logs. Find its process ID.</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -397,92 +425,6 @@
             <div class="challenge-body">
               <p>Description for HindSight Challenge 5.</p>
               <p><strong>Flag format:</strong> <code>flag{hindsight5}</code></p>
-            </div>
-            <div class="challenge-footer">
-              <input type="text" placeholder="Enter flag..." class="flag-input" />
-              <button class="submit-btn">Submit</button>
-              <div class="result"></div>
-            </div>
-          </div>
-        -->
-        </div>
-      </section>
-      
-      <!-- TIMELINE EXPLORER SECTION -->
-      <section id="timeline-explorer" class="challenge-section">
-        <h2>Timeline Explorer</h2>
-        <div class="challenges-grid">
-          
-          <div class="challenge-card" data-challenge="timeline1">
-            <div class="challenge-header">
-              <h3>Naughty User</h3>
-            </div>
-            <div class="challenge-body">
-              <p>Use Timeline Explorer to view <code>EvtxEcmd.csv</code> (KAPE module output) and cross-reference with the Hayabusa timeline.</p>
-              <p>Apply filters and groupings to identify the user ID of the user who cleared the logs.</p>
-            </div>
-            <div class="challenge-footer">
-              <input type="text" placeholder="Enter flag..." class="flag-input" />
-              <button class="submit-btn">Submit</button>
-              <div class="result"></div>
-            </div>
-          </div>
-
-          <div class="challenge-card" data-challenge="timeline2">
-            <div class="challenge-header">
-              <h3>Naughty Process</h3>
-              
-            </div>
-            <div class="challenge-body">
-              <p>A process cleared the logs. Find its process ID.</p>
-            </div>
-            <div class="challenge-footer">
-              <input type="text" placeholder="Enter flag..." class="flag-input" />
-              <button class="submit-btn">Submit</button>
-              <div class="result"></div>
-            </div>
-          </div>
-          <!--
-          <div class="challenge-card" data-challenge="timeline3">
-            <div class="challenge-header">
-              <h3>Challenge 3</h3>
-              <span class="difficulty medium">Medium</span>
-            </div>
-            <div class="challenge-body">
-              <p>Description for Timeline Explorer Challenge 3.</p>
-              <p><strong>Flag format:</strong> <code>flag{timeline3}</code></p>
-            </div>
-            <div class="challenge-footer">
-              <input type="text" placeholder="Enter flag..." class="flag-input" />
-              <button class="submit-btn">Submit</button>
-              <div class="result"></div>
-            </div>
-          </div>
-
-          <div class="challenge-card" data-challenge="timeline4">
-            <div class="challenge-header">
-              <h3>Challenge 4</h3>
-              <span class="difficulty medium">Medium</span>
-            </div>
-            <div class="challenge-body">
-              <p>Description for Timeline Explorer Challenge 4.</p>
-              <p><strong>Flag format:</strong> <code>flag{timeline4}</code></p>
-            </div>
-            <div class="challenge-footer">
-              <input type="text" placeholder="Enter flag..." class="flag-input" />
-              <button class="submit-btn">Submit</button>
-              <div class="result"></div>
-            </div>
-          </div>
-
-          <div class="challenge-card" data-challenge="timeline5">
-            <div class="challenge-header">
-              <h3>Challenge 5</h3>
-              <span class="difficulty hard">Hard</span>
-            </div>
-            <div class="challenge-body">
-              <p>Description for Timeline Explorer Challenge 5.</p>
-              <p><strong>Flag format:</strong> <code>flag{timeline5}</code></p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
