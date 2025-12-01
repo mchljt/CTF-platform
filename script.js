@@ -65,7 +65,7 @@ function setupEventListeners() {
             const input = card.querySelector('.flag-input');
             const result = card.querySelector('.result');
             
-            const userFlag = input.value.trim();
+            const userFlag = input.value.trim().toLowerCase();  // ← ADDED .toLowerCase()
             if (!userFlag) {
                 showResult(result, 'Please enter a flag', false);
                 return;
