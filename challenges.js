@@ -1,3 +1,5 @@
+console.log('challenges.js loaded');
+
 const challenges = {
   "intro1": "807d0fbcae7c4b20518d4d85664f6820aafdf936104122c5073e7744c46c4b87",
   "ftk1": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
