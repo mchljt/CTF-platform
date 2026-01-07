@@ -141,7 +141,7 @@
               <h3>3. KAPE Target Outputs</h3>
             </div>
             <div class="challenge-body">
-              <p>View the <code>Users</code> folder in the <code>KAPE Target Outputs</code> folder.</p>
+              <p>View the <code>Users</code> folder in the <code>C:\Users\Administrator\Desktop\Lab\KAPE Target Outputs\2025-11-28T091517_kape_target\G\Users</code> folder.</p>
               <p>How many user accounts are there? (excluding Default and Public)</p>
             </div>
             <div class="challenge-footer">
@@ -215,9 +215,9 @@
               
             </div>
             <div class="challenge-body">
-              <p>Execute the following command:</p>
-              <p><code><strong>.\hayabusa-3.7.0-win-x64.exe csv-timeline –d </strong>"C:\Users\Administrator\Desktop\CTF\KAPE Target Outputs\2025-11-28T091517_kape_target\G\Windows\System32\winevt\logs"
-                <strong> -o </strong>"C:\Users\Administrator\Desktop\CTF\Hayabusa Timeline\timeline.csv"</code></p>
+              <p>The following command has already been executed for you.😁 </p>
+              <p><code><strong>.\hayabusa-3.7.0-win-x64.exe csv-timeline –d </strong>"C:\Users\Administrator\Desktop\Lab\KAPE Target Outputs\2025-11-28T091517_kape_target\G\Windows\System32\winevt\logs"
+                <strong> -o </strong>"C:\Users\Administrator\Desktop\Lab\Hayabusa Timeline\timeline.csv"</code></p>
               <p>To clear this challenge, simply enter the word: <code>hayabusa</code></p>
             </div>
             <div class="challenge-footer">
@@ -233,6 +233,8 @@
             </div>
             <div class="challenge-body">
               <p>Logs have been cleared! View the Hayabusa timeline in Timeline Explorer to identify how many logs were cleared in total.</p>
+              <p><strong>Hint:</strong>Refer to Section 4.2 Grouping in the Lab Instructions document</p>
+              <p>Path to Hayabusa Timeline: C:\Users\Administrator\Desktop\Lab\Hayabusa Timeline\timeline.csv</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -263,8 +265,9 @@
               <h3>7. Naughty User</h3>
             </div>
             <div class="challenge-body">
-              <p>Use Timeline Explorer to view <code>EvtxEcmd.csv</code> (KAPE module output) and cross-reference with the Hayabusa timeline.</p>
               <p>Apply filters and groupings to identify the user ID of the user who cleared the logs.</p>
+              <p><strong>Hint:</strong>View the <strong>Details</strong> column of the timeline.</p>
+              <p>Note: You can double-click into a cell in Timeline Explorer to copy its contents!</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -278,6 +281,8 @@
             </div>
             <div class="challenge-body">
               <p>A process cleared the logs. Find its process ID.</p>
+              <p><strong>Hint:</strong>View the <strong>Details</strong> column of the timeline.</p>
+              <p>Note: You can double-click into a cell in Timeline Explorer to copy its contents!</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -330,12 +335,11 @@
               <h3>9. Command Execution</h3>
             </div>
             <div class="challenge-body">
-              <p><strong>1. </strong>Run <code>hindsight_gui.exe</code></p>
-              <p><strong>2. </strong>Run <code>http://localhost:8080/</code> in a web browser</p>
+              <p>Hindsight has already been executed 😁 </p>
               <p>I'm feeling a bit naughty today.😈 </p>
               <p>Let's look at what <strong>cyberarkadm</strong> has been doing on the web.</p>
+              <p>Double-click the Hindsight output at C:\Users\Administrator\Desktop\Lab\Hindsight Outputs\Hindsight Report (2025-12-02T08-59-28).xlsx to open it in LibreOffice. </p>
               <p>Enter the first URL entry in the Hindsight output</p>
-              <p><strong>Note: </strong>Chrome search history is stored in <code>C:\Users\Administrator\Desktop\CTF\KAPE Target Outputs\2025-11-28T091517_kape_target\G\Users\cyberarkadm\AppData\Local\Google\Chrome\User Data\Default</code>.</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
