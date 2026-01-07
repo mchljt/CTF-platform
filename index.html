@@ -440,9 +440,8 @@
               
             </div>
             <div class="challenge-body">
-              <p>Execute the following command:</p>
-              <p><code>thor64-lite.exe <strong>-a Filescan--intense --norescontrol --cross-platform -p</strong> G:\ <strong>-e</strong> "C:\Users\Administrator\Desktop\CTF\Thor Lite Outputs"</code></p>
-              <p><strong>Note: </strong>The THOR Lite scan takes quite a while to fully execute. To save your time, I have taken the liberty to run it beforehand 😁!</p>
+              <p>The following command has already been executed:</p>
+              <p><code>thor64-lite.exe <strong>-a Filescan--intense --norescontrol --cross-platform -p</strong> G:\ <strong>-e</strong> "C:\Users\Administrator\Desktop\Lab\Thor Lite Outputs"</code></p>
               <p>To clear this challenge, simply enter the word: <code>thor</code></p>
             </div>
             <div class="challenge-footer">
@@ -460,6 +459,7 @@
             <div class="challenge-body">
               <p>THOR Lite uses signature-based detection. How many total alerts & warnings did THOR Lite generate during the scan?</p>
               <p>Check the THOR Lite HTML report for the total count.</p>
+              <p><strong>Path to HTML Report:</strong><code>C:\Users\Administrator\Desktop\Lab\Thor Lite Outputs\EC2AMAZ-7FLOMB1_thor_2025-12-01_1036.html</code></p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -508,7 +508,7 @@
               <p>Navigate to the following directory: <code>G:\ProgramData\Microsoft\Windows Defender\Support</code></p>
               <p>This directory contains Windows Defender activity logs.</p>
               <p>Determining if the mpcache file was created due to a detection allows us to identify if this VM has been compromised.</p>
-              <p>View the <strong>MPDetection</strong> file using Notepad++. Did Defender detect any malicious files? (y/n)</p>
+              <p>View the <strong>MPDetection-20250712-060749.txt</strong> file using Notepad++. Did Defender detect any malicious files? (y/n)</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -524,11 +524,11 @@
             </div>
             <div class="challenge-body">
               <p>We still need to determine how the mpcache file was created.</p>
-              <p>In the same directory, view the <strong>MPLog</strong> file using Notepad++. This file contains all Defender activity.</p>
+              <p>In the same directory, view the <strong>MPLog-20250712-060749.txt</strong> file using Notepad++. This file contains all Defender activity.</p>
               <p>Viewing this file allows us to identify when the mpcache file was created, and the events leading up to its creation.</p>
-              <p>Search for the mpcache file in Notepad++. Prior to its creation, Defender initiated an update.</p>
+              <p>Search for (Ctrl + F) <code>mpcache-33F7A7FF51EC99E22C2A7716C8CF60E6973026F8.bin</code>within MPLog. Prior to its creation, Defender initiated an update.</p>
               <p>What is the timestamp of this update? Answer in <strong>HH:MM:SS</strong></p>
-              <p><strong>Note: </strong>The timestamp is in UTC. Convert it to SGT.</p>
+              <p><strong>Note: </strong>The timestamp is in UTC. Convert it to SGT (</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -578,11 +578,14 @@
             </div>
             <div class="challenge-body">
               <p>mpasbase.vdm's contents are unreadable, but don't worry!</p>
-              <p><strong>1. </strong>Use FTK Imager to extract the mpasbase.vdm file from the snapshot.</p>
+              <p><strong>1. </strong>Use FTK Imager to extract the mpasbase.vdm file from the snapshot. <strong>(Refer to Section 1.1 of the Lab Instructions Document).</strong></p>
               <p><strong>2. </strong>Use WDExtract to convert some of its contents into readable strings:</p>
-              <p><code>wdextract64.exe <strong>path-to-extracted-mpasbase.vdm</strong></code></p>
+              <p><strong>1. </strong>Launch Command Prompt</p>
+              <p><strong>2. </strong>Enter <code>cd C:\Users\Administrator\Desktop\CLI Forensic Tools\WDExtract\bin64</code></p>
+              <p><strong>3. </strong>Enter <code>wdextract64.exe C:\Users\Administrator\Desktop\Lab\mpasbase\mpasbase.extracted</code></p>
+              <p><strong>4. </strong>In File Explorer, navigate to <code>C:\Users\Administrator\Desktop\Lab\mpasbase</code></p>
               <p>If we can prove that the YARA rule is found in the vdm file, our hypothesis will be proven!</p>
-              <p>Search for the previously identified YARA rule, and enter the line number in which the YARA rule is found in.</p>
+              <p>View the <code>mpasbase.extracted</code> file in Notepad++. Search for the previously identified YARA rule, and enter the line number in which the YARA rule is found in.</p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
@@ -623,8 +626,9 @@
               
             </div>
             <div class="challenge-body">
-              <p>Execute the following command</p>
-              <p><code>VSCMount.exe <strong>--dl</strong> G:\ <strong>--mp</strong> "C:\Users\Administrator\Desktop\CTF\VSCMount Outputs"</code></p>
+              <p><strong>1. </strong>In File Explorer, Navigate to <code>C:\Users\Administrator\Desktop\CLI Forensic Tools\VSCMount</code>.</p>
+              <p><strong>2. </strong>Execute the following command:</p>
+              <p><code>VSCMount.exe <strong>--dl</strong> G:\ <strong>--mp</strong> "C:\Users\Administrator\Desktop\Lab\VSCMount Outputs"</code></p>
               <p>To clear this challenge, simply enter the word: <code>vscmount</code></p>
             </div>
             <div class="challenge-footer">
@@ -729,8 +733,38 @@
             <div class="challenge-body">
               <p>Examine the SYSTEM registry hive and identify the Start value of the Volume Shadow Copy Service registry key.</p>
               <p>This Start value represents a setting.</p>
-              <p>Research and find out what setting VSS has been set to!</p>
-              <p><strong>Note: </strong>Look in <code>\SYSTEM\CurrentControlSet\Services\VSS</code></p>
+              <table>
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>Boot</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>System</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Automatic</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Manual</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Disabled</td>
+              </tr>
+            </tbody>
+          </table>
+              <p><strong>Note: </strong>The SYSTEM registry hive is found in <code>C:\Users\Administrator\Desktop\Lab\KAPE Target Outputs\2025-11-28T091517_kape_target\G\Windows\System32\config</code></p>
+              <p><strong>Note: </strong>After loading the SYSTEM registry hive in Registry Explorer, expand ROOT, navigate to and click <code>\SYSTEM\ControlSet001\Services\VSS</code></p>
             </div>
             <div class="challenge-footer">
               <input type="text" placeholder="Enter flag..." class="flag-input" />
